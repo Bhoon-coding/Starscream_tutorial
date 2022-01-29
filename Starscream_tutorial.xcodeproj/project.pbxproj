@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB31372730997B04B9C491DE /* Pods_Starscream_tutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE4A92EFCAD0BE633D44B7A /* Pods_Starscream_tutorial.framework */; };
 		E1E57B8C27A3786E0045A19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E57B8B27A3786E0045A19E /* AppDelegate.swift */; };
 		E1E57B8E27A3786E0045A19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E57B8D27A3786E0045A19E /* SceneDelegate.swift */; };
-		E1E57B9027A3786E0045A19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E57B8F27A3786E0045A19E /* ViewController.swift */; };
+		E1E57B9027A3786E0045A19E /* StarscreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E57B8F27A3786E0045A19E /* StarscreamViewController.swift */; };
 		E1E57B9327A3786E0045A19E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E57B9127A3786E0045A19E /* Main.storyboard */; };
 		E1E57B9527A378700045A19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E57B9427A378700045A19E /* Assets.xcassets */; };
 		E1E57B9827A378700045A19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E57B9627A378700045A19E /* LaunchScreen.storyboard */; };
+		E1F47A3627A3844500E264AF /* StarscreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F47A3527A3844500E264AF /* StarscreamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BE4A92EFCAD0BE633D44B7A /* Pods_Starscream_tutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Starscream_tutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D17FF1F50CEAF2F42461F7 /* Pods-Starscream_tutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Starscream_tutorial.release.xcconfig"; path = "Target Support Files/Pods-Starscream_tutorial/Pods-Starscream_tutorial.release.xcconfig"; sourceTree = "<group>"; };
+		847D4B714FC555C3C2E1027B /* Pods-Starscream_tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Starscream_tutorial.debug.xcconfig"; path = "Target Support Files/Pods-Starscream_tutorial/Pods-Starscream_tutorial.debug.xcconfig"; sourceTree = "<group>"; };
 		E1E57B8827A3786E0045A19E /* Starscream_tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starscream_tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E57B8B27A3786E0045A19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E57B8D27A3786E0045A19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1E57B8F27A3786E0045A19E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1E57B8F27A3786E0045A19E /* StarscreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarscreamViewController.swift; sourceTree = "<group>"; };
 		E1E57B9227A3786E0045A19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1E57B9427A378700045A19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1E57B9727A378700045A19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1E57B9927A378700045A19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F47A3527A3844500E264AF /* StarscreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarscreamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB31372730997B04B9C491DE /* Pods_Starscream_tutorial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E4735982567736199B9750 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				847D4B714FC555C3C2E1027B /* Pods-Starscream_tutorial.debug.xcconfig */,
+				66D17FF1F50CEAF2F42461F7 /* Pods-Starscream_tutorial.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2F94DDF73A00EC295D987B59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4A92EFCAD0BE633D44B7A /* Pods_Starscream_tutorial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1E57B7F27A3786E0045A19E = {
 			isa = PBXGroup;
 			children = (
 				E1E57B8A27A3786E0045A19E /* Starscream_tutorial */,
 				E1E57B8927A3786E0045A19E /* Products */,
+				10E4735982567736199B9750 /* Pods */,
+				2F94DDF73A00EC295D987B59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +84,22 @@
 			children = (
 				E1E57B8B27A3786E0045A19E /* AppDelegate.swift */,
 				E1E57B8D27A3786E0045A19E /* SceneDelegate.swift */,
-				E1E57B8F27A3786E0045A19E /* ViewController.swift */,
+				E1F47A3727A3849B00E264AF /* Starscream */,
 				E1E57B9127A3786E0045A19E /* Main.storyboard */,
 				E1E57B9427A378700045A19E /* Assets.xcassets */,
 				E1E57B9627A378700045A19E /* LaunchScreen.storyboard */,
 				E1E57B9927A378700045A19E /* Info.plist */,
 			);
 			path = Starscream_tutorial;
+			sourceTree = "<group>";
+		};
+		E1F47A3727A3849B00E264AF /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				E1E57B8F27A3786E0045A19E /* StarscreamViewController.swift */,
+				E1F47A3527A3844500E264AF /* StarscreamView.swift */,
+			);
+			path = Starscream;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E57B9C27A378700045A19E /* Build configuration list for PBXNativeTarget "Starscream_tutorial" */;
 			buildPhases = (
+				280313CC42D475E70EC62B75 /* [CP] Check Pods Manifest.lock */,
 				E1E57B8427A3786E0045A19E /* Sources */,
 				E1E57B8527A3786E0045A19E /* Frameworks */,
 				E1E57B8627A3786E0045A19E /* Resources */,
+				24062AF9F82D73BF13CFA3A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +170,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24062AF9F82D73BF13CFA3A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Starscream_tutorial/Pods-Starscream_tutorial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Starscream_tutorial/Pods-Starscream_tutorial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Starscream_tutorial/Pods-Starscream_tutorial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		280313CC42D475E70EC62B75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Starscream_tutorial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E1E57B8427A3786E0045A19E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E57B9027A3786E0045A19E /* ViewController.swift in Sources */,
+				E1E57B9027A3786E0045A19E /* StarscreamViewController.swift in Sources */,
 				E1E57B8C27A3786E0045A19E /* AppDelegate.swift in Sources */,
 				E1E57B8E27A3786E0045A19E /* SceneDelegate.swift in Sources */,
+				E1F47A3627A3844500E264AF /* StarscreamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +364,7 @@
 		};
 		E1E57B9D27A378700045A19E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 847D4B714FC555C3C2E1027B /* Pods-Starscream_tutorial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -297,6 +378,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +388,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E1E57B9E27A378700045A19E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66D17FF1F50CEAF2F42461F7 /* Pods-Starscream_tutorial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
