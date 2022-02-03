@@ -11,6 +11,9 @@ import SnapKit
 
 class StarscreamView: UIViewController {
     
+    var socket: WebSocket!
+    var isConnected = false
+    
     lazy var viewWrapper: UIView = {
        let view = UIView()
         view.layer.borderColor = #colorLiteral(red: 0.391511023, green: 0.4367037416, blue: 0.4872434139, alpha: 1)
@@ -22,8 +25,6 @@ class StarscreamView: UIViewController {
     lazy var switchConnectButton: UIButton = {
         let button = UIButton()
         button.isSelected = false
-        button.setTitle("Connected", for: .normal)
-        button.setTitle("DisConnected", for: .selected)
         button.setTitleColor(.blue, for: .normal)
         button.addTarget(self, action: #selector(tappedConnectButton), for: .touchUpInside)
         return button
@@ -38,28 +39,41 @@ class StarscreamView: UIViewController {
         return textField
     }()
     
-    lazy var writeButton: UIButton = {
+    lazy var sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("send", for: .normal)
-        button.setTitleColor(.black , for: .normal)
+        button.setTitleColor(.white , for: .normal)
+        button.layer.cornerRadius = 10
+        button.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         button.addTarget(self, action: #selector(tappedSendButton), for: .touchUpInside)
         return button
     }()
 
+    
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupWebSocket()
         setupUI()
-                
+    }
+    
+    private func setupWebSocket() {
+        let url = URL(string: "ws://dev2.arasoft.kr:18080/okra-app-v1/ocrTest")!
+        var request = URLRequest(url: url)
+        request.timeoutInterval = 3
+        socket = WebSocket(request: request)
+        socket.delegate = self
     }
 
     private func setupUI() {
         
+        // MARK: addSubview
         self.view.addSubview(viewWrapper)
         self.view.addSubview(switchConnectButton)
         self.view.addSubview(textField)
-        self.view.addSubview(writeButton)
+        self.view.addSubview(sendButton)
         
+        // MARK: setupLayout
         viewWrapper.snp.makeConstraints {
             $0.width.height.equalTo(300)
             $0.center.equalTo(self.view)
@@ -77,8 +91,9 @@ class StarscreamView: UIViewController {
             $0.centerX.equalTo(self.viewWrapper)
         }
         
-        writeButton.snp.makeConstraints {
+        sendButton.snp.makeConstraints {
             $0.top.equalTo(self.textField).offset(80)
+            $0.width.equalTo(80)
             $0.centerX.equalTo(self.viewWrapper)
         }
         
@@ -87,18 +102,76 @@ class StarscreamView: UIViewController {
     }
     
     @objc func tappedConnectButton() {
-        switchConnectButton.isSelected = !switchConnectButton.isSelected
-        print("now connect status is \(switchConnectButton.isSelected)")
+        if isConnected {
+            switchConnectButton.setTitle("Disconnect", for: .normal)
+            socket.disconnect()
+        } else {
+            switchConnectButton.setTitle("Connect", for: .normal)
+            socket.connect()
+        }
+//        switchConnectButton.isSelected = !switchConnectButton.isSelected
+//        print("now connect status is \(switchConnectButton.isSelected)")
     }
     
     @objc func tappedSendButton() {
         guard let text = textField.text else { return }
-        print("send \(text)")
+        socket.write(string: text)
         
         textField.text = ""
     }
     
 
+}
+
+extension StarscreamView: WebSocketDelegate {
+    
+    func didReceive(event: WebSocketEvent, client: WebSocket) {
+        switch event {
+        case .connected(let headers):
+            isConnected = true
+            print("websocket is connected: \(headers)")
+            
+        case .disconnected(let reason, let code):
+            isConnected = false
+            print("websocket is disconnected: \(reason) with code: \(code)")
+            
+        case .cancelled:
+            isConnected = false
+            print("웹소켓 취소됨")
+            
+        case .error(let err):
+            isConnected = false
+            handleError(err)
+            
+        case .binary(let data):
+            print("binary data: \(data)")
+            
+        case .ping(let data):
+            print("ping data: \(data)")
+            
+        case .pong(let data):
+            print("pong data: \(data)")
+            
+        case .reconnectSuggested(let bool):
+            print("reconnectSuggested: \(bool)")
+            
+        case .viabilityChanged(let bool):
+            print("viabilityChanged: \(bool)")
+            
+        case .text(let str):
+            print("text str: \(str)")
+        }
+    }
+    
+    func handleError(_ error: Error?) {
+        if let error = error as? WSError {
+            print("websocket encountered an error: \(error.message)")
+        } else if let error = error {
+            print("websocket encountered an error: \(error.localizedDescription)")
+        } else {
+            print("websocket encountered an error")
+        }
+    }
 }
 
 extension UITextField {
