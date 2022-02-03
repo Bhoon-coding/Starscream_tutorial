@@ -31,6 +31,7 @@ class StarscreamView: UIViewController {
     
     lazy var textField: UITextField = {
         let textField = UITextField()
+        textField.addLeftPadding()
         textField.placeholder = "내용을 입력해주세요."
         textField.layer.borderWidth = 1
         textField.layer.borderColor = #colorLiteral(red: 0.391511023, green: 0.4367037416, blue: 0.4872434139, alpha: 1)
@@ -70,7 +71,9 @@ class StarscreamView: UIViewController {
         }
         
         textField.snp.makeConstraints {
-            $0.top.equalTo(self.switchConnectButton).offset(60)
+            $0.top.equalTo(self.switchConnectButton).offset(80)
+            $0.height.equalTo(40)
+            $0.width.equalTo(self.viewWrapper).inset(30)
             $0.centerX.equalTo(self.viewWrapper)
         }
         
@@ -96,6 +99,14 @@ class StarscreamView: UIViewController {
     }
     
 
+}
+
+extension UITextField {
+    func addLeftPadding() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
 }
 
 // 전처리
